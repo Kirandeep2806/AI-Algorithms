@@ -1,8 +1,5 @@
-+----------+--------------+
-| Alarm    |   phi(Alarm) |
-+==========+==============+
-| Alarm(0) |       0.5578 |
-+----------+--------------+
-| Alarm(1) |       0.4422 |
-+----------+--------------+
-The probability that the alarm has sounded but neither a burglary nor an earthquake has occurred, and both John and Mary calls: 0.5577689243027889
+('B', 2)
+('E', 3)
+('D', 6)
+('G', 1)
+A->E->D->G
