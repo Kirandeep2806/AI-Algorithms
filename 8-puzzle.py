@@ -58,7 +58,8 @@ def dfs(x, y, curr, goal, vis, res, depth):
 
 curr = [[1,2,3],[None,4,6],[7,5,8]]
 # goal = [[1,2,3],[4,5,6],[7,8,None]]
-goal = [[1,2,3],[4,5,6],[None,7,8]]
+# goal = [[1,2,3],[4,5,6],[None,7,8]]
+goal = [[1,3,None],[4,2,6],[7,5,8]]
 
 vis = []
 xMoves = [0,0,1,-1]
