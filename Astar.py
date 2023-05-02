@@ -23,14 +23,11 @@ def dfs(cur, goal, distanceCovered, vis, res):
         if vals!=None:
             node, distance = vals
             if node not in vis:
-                fx = distanceCovered + manhattanDistance(distance, H_dist[cur])
+                fx = distanceCovered + H_dist[node]
                 heapq.heappush(pq, DS(node, fx, distance))
     if pq:
         ds = heapq.heappop(pq)
         dfs(ds.node, goal, distanceCovered + ds.dist, vis, res + [ds.node])
-            
-
-manhattanDistance = lambda x,y:abs(x-y)
 
 Graph_nodes = {
     'A': [('B', 2), ('E', 3)],
@@ -42,7 +39,7 @@ Graph_nodes = {
 
 H_dist = {
     'A': 11,
-    'B': 6,
+    'B': 100,
     'C': 99,
     'D': 1,
     'E': 7,
