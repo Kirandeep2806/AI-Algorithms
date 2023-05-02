@@ -13,12 +13,12 @@ class DS:
 
 
 def dfs(cur, goal, distanceCovered, vis, res):
+    global pq
     if cur == goal:
         print(' -> '.join(res))
         exit(0)
     
     vis[cur] = True
-    pq = []
     for vals in Graph_nodes[cur]:
         if vals!=None:
             node, distance = vals
@@ -29,6 +29,7 @@ def dfs(cur, goal, distanceCovered, vis, res):
         ds = heapq.heappop(pq)
         dfs(ds.node, goal, distanceCovered + ds.dist, vis, res + [ds.node])
 
+pq = []
 Graph_nodes = {
     'A': [('B', 2), ('E', 3)],
     'B': [('C', 1), ('G', 9)],
@@ -39,7 +40,7 @@ Graph_nodes = {
 
 H_dist = {
     'A': 11,
-    'B': 100,
+    'B': 1,
     'C': 99,
     'D': 1,
     'E': 7,
