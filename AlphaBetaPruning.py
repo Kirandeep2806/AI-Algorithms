@@ -11,14 +11,14 @@ def alphaBeta(node, alpha, beta, depth):
     
     if not depth&1:
         val = float("inf")
-        for i in range(1,3):
+        for i in range(2):
             val = max(alphaBeta(node*2+i, alpha, beta, depth+1), val)
             alpha = max(alpha, val)
             if alpha >= beta:
                 break
     else:
         val = -float("inf")
-        for i in range(1,3):
+        for i in range(2):
             val = min(alphaBeta(node*2+i, alpha, beta, depth+1), val)
             beta = min(beta, val)
             if alpha >= beta:
