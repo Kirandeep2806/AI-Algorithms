@@ -9,7 +9,7 @@ def alphaBeta(node, alpha, beta, depth):
     if depth == n:
         return arr[node]
     
-    if depth&1:
+    if not depth&1:
         val = float("inf")
         for i in range(1,3):
             val = max(alphaBeta(node*2+i, alpha, beta, depth+1), val)
