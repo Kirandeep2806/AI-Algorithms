@@ -25,7 +25,7 @@ def dfs(cur, goal, distanceCovered, vis, res):
             if node not in vis:
                 fx = distanceCovered + H_dist[node]
                 heapq.heappush(pq, DS(node, fx, distance))
-    if pq:
+    while pq:
         ds = heapq.heappop(pq)
         dfs(ds.node, goal, distanceCovered + ds.dist, vis, res + [ds.node])
 
