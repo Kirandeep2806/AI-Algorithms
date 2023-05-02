@@ -8,8 +8,8 @@ n = int(math.log2(len(arr)))
 def minimax(node, depth):
     if depth == n:
         return arr[node]
-    left = minimax(node*2+1, depth+1)
-    right = minimax(node*2+2, depth+1)
+    left = minimax(node*2, depth+1)
+    right = minimax(node*2+1, depth+1)
     if depth&1:
         return min(left, right)
     else:
