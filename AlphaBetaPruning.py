@@ -10,14 +10,14 @@ def alphaBeta(node, alpha, beta, depth):
         return arr[node]
     
     if not depth&1:
-        val = float("inf")
+        val = -float("inf")
         for i in range(2):
             val = max(alphaBeta(node*2+i, alpha, beta, depth+1), val)
             alpha = max(alpha, val)
             if alpha >= beta:
                 break
     else:
-        val = -float("inf")
+        val = float("inf")
         for i in range(2):
             val = min(alphaBeta(node*2+i, alpha, beta, depth+1), val)
             beta = min(beta, val)
