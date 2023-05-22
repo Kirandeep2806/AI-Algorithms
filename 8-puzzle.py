@@ -31,6 +31,7 @@ def swap(x1,y1,x2,y2,curr):
 
 
 def dfs(x, y, curr, goal, vis, res, depth):
+    global pq
     vis.append(curr)
     if curr == goal:
         for i in res:
@@ -39,7 +40,6 @@ def dfs(x, y, curr, goal, vis, res, depth):
             print()
         exit(0)
 
-    pq = []
     for i in range(4):
         x1 = x + xMoves[i]
         y1 = y + yMoves[i]
@@ -55,7 +55,7 @@ def dfs(x, y, curr, goal, vis, res, depth):
 
     
 
-
+pq = []
 curr = [[1,2,3],[None,4,6],[7,5,8]]
 # goal = [[1,2,3],[4,5,6],[7,8,None]]
 # goal = [[1,2,3],[4,5,6],[None,7,8]]

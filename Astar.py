@@ -13,25 +13,23 @@ class DS:
 
 
 def dfs(cur, goal, distanceCovered, vis, res):
+    global pq
     if cur == goal:
         print(' -> '.join(res))
         exit(0)
     
     vis[cur] = True
-    pq = []
     for vals in Graph_nodes[cur]:
         if vals!=None:
             node, distance = vals
             if node not in vis:
-                fx = distanceCovered + manhattanDistance(distance, H_dist[cur])
+                fx = distanceCovered + H_dist[node]
                 heapq.heappush(pq, DS(node, fx, distance))
-    if pq:
+    while pq:
         ds = heapq.heappop(pq)
         dfs(ds.node, goal, distanceCovered + ds.dist, vis, res + [ds.node])
-            
 
-manhattanDistance = lambda x,y:abs(x-y)
-
+pq = []
 Graph_nodes = {
     'A': [('B', 2), ('E', 3)],
     'B': [('C', 1), ('G', 9)],
@@ -42,7 +40,7 @@ Graph_nodes = {
 
 H_dist = {
     'A': 11,
-    'B': 6,
+    'B': 1,
     'C': 99,
     'D': 1,
     'E': 7,
