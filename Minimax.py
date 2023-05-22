@@ -3,7 +3,7 @@
 import math
 
 arr = [3,5,2,9,12,5,23,23]
-n = int(math.log2(len(arr)))
+n = int(math.log2(len(arr)))+1
 
 def minimax(node, depth):
     if depth == n:
