@@ -19,9 +19,11 @@ while True:
     for s in states:
         max_val = 0
         for a in actions:
-            val = rewards[s]
+            val = 0
             for s_next in states:
-                val += prob[s][s_next][a] * (gamma * V[s_next])
+                val += prob[s][s_next][a] * V[s_next]
+            val *= gamma
+            val += rewards[s]
             max_val = max(max_val, val)
             if V[s] < val:
                 pi[s] = a
@@ -32,4 +34,10 @@ while True:
     V = V_new
 
 print("Best approach at each state :", V)
+print("Optimal policy :", pi)
+for i in range(len(pi)):
+    if pi[i] == 1:
+        pi[i] = "\u2192"
+    if pi[i] == 0:
+        pi[i] = "\u2190"
 print("Optimal policy :", pi)
