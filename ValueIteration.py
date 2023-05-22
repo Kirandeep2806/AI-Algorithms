@@ -25,7 +25,7 @@ while True:
             max_val = max(max_val, val)
             if V[s] < val:
                 pi[s] = a
-        V_new[s] = max_val
+        V_new[s] = round(max_val, 2)
 
     if V_new == V:
         break
