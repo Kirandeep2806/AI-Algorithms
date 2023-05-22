@@ -36,14 +36,14 @@ def PolicyEvaluation(policy, V):
                 if r==c==1 or (r<=1 and c==3):
                     continue
                 VDash[r][c] = round(CalculateV(V, r, c, policy[r][c]), 3)
-                err = max(err, abs(VDash[r][c] - V[r][c]))
+                err = max(err, VDash[r][c] - V[r][c])
         V = VDash
         if err < MAX_ERROR * (1-DISCOUNT) / DISCOUNT:
             break
     return V
 
 def PolicyIteration(policy, V):
-    print("\nDuring Updations : ")
+    print("\nDuring Updating : ")
     latestV = V
     while True:
         V = PolicyEvaluation(policy, V)
