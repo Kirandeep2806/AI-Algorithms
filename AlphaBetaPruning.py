@@ -26,5 +26,5 @@ def alphaBeta(node, alpha, beta, depth):
     return val
         
 
-res = alphaBeta(0,-float("inf"),float("inf"),1)
+res = alphaBeta(0,-float("inf"),float("inf"),0)
 print(res)
